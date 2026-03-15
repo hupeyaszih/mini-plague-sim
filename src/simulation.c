@@ -47,8 +47,8 @@ cleanup:
 
 void delete_simulation(Simulation* simulation){
     if(!simulation) return;
-    if(simulation->people_buffer) {free(simulation->people_buffer); simulation->people_buffer = NULL;}
-    if(simulation->people) {free(simulation->people); simulation->people = NULL;}
+    free(simulation->people_buffer);
+    free(simulation->people);
     free(simulation); 
 }
 
